@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+    <style>
+        .form-group {
+            margin: 4px;
+        }
+
+        .form-group label {
+            width: 75px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <div class="form-group">
+            <label>Логін</label>
+            <input type="text" name="loginInput">
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" name="passwordInput">
+        </div>
+        <div class="form-group">
+            <label>Ім'я</label>
+            <input type="text" name="nameInput">
+        </div>
+        <div class="form-group">
+            <label>Прізвище</label>
+            <input type="text" name="lastNameInput">
+        </div>
+        <div class="form-group">
+            <input type="button" id="showValuesBtn" value="Показати значення">
+        </div>
+    </form>
+    <script>
+        // Отримуємо посилання на кнопку "Показати значення"
+        const showValuesBtn = document.getElementById('showValuesBtn');
+
+        // Додаємо обробник події click для кнопки
+        showValuesBtn.addEventListener('click', function() {
+            // Отримуємо всі елементи input в формі
+            const inputs = document.querySelectorAll('input[type="text"], input[type="password"]');
+
+            // Перебираємо елементи input і виводимо їх значення на консоль
+            for (let i = 0; i < inputs.length; i++) {
+                console.log(inputs[i].name + ': ' + inputs[i].value);
+            }
+        });
+    </script>
+</body>
+
+</html>
